@@ -18,13 +18,13 @@ resource "random_string" "resource_code" {
 }
 
 resource "azurerm_resource_group" "tfstate" {
-  name     = "testRG"
+  name     = "testRG1"
   location = "East US"
 }
 
 resource "azurerm_storage_account" "tfstate" {
   name                     = "tfstate${random_string.resource_code.result}"
-  resource_group_name      = "testRG"
+  resource_group_name      = "testRG1"
   location                 = "East US"
   account_tier             = "Standard"
   account_replication_type = "LRS"
