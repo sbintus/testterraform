@@ -11,6 +11,17 @@ provider "azurerm" {
   features {}
 }
 
+terraform {
+      backend "azurerm" {
+        resource_group_name  = "tfstate"
+        storage_account_name = "satest123456789abcd"
+        container_name       = "test"
+        key                  = "terraform.tfstate"
+    }
+
+}
+
+
 resource "random_string" "resource_code" {
   length  = 5
   special = false
