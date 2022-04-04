@@ -46,3 +46,16 @@ resource "azurerm_storage_container" "tfstate" {
   storage_account_name  = azurerm_storage_account.tfstate.name
   container_access_type = "blob"
 }
+
+resource "azurerm_storage_account" "tfstate" {
+  name                     = "t1234fstate${random_string.resource_code.result}"
+  resource_group_name      = "testRG"
+  location                 = "East US"
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+  allow_blob_public_access = true
+
+  tags = {
+    environment = "staging"
+  }
+}
