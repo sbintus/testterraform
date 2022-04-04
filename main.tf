@@ -47,7 +47,7 @@ resource "azurerm_storage_container" "tfstate" {
   container_access_type = "blob"
 }
 
-resource "azurerm_storage_account" "tfstate" {
+resource "azurerm_storage_account" "tfstate1" {
   name                     = "t1234fstate${random_string.resource_code.result}"
   resource_group_name      = "testRG"
   location                 = "East US"
