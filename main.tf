@@ -18,7 +18,7 @@ resource "random_string" "resource_code" {
 }
 
 resource "azurerm_resource_group" "tfstate" {
-  name     = "tfstate"
+  name     = "testRG"
   location = "East US"
 }
 
