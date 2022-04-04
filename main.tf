@@ -13,7 +13,7 @@ provider "azurerm" {
 
 terraform {
       backend "azurerm" {
-        resource_group_name  = "tfstate"
+        resource_group_name  = "testRG"
         storage_account_name = "satest123456789abcd"
         container_name       = "test"
         key                  = "terraform.tfstate"
@@ -48,6 +48,19 @@ resource "azurerm_storage_container" "tfstate" {
 }
 
 resource "azurerm_storage_account" "tfstate1" {
+  name                     = "t1234fstate${random_string.resource_code.result}"
+  resource_group_name      = "testRG"
+  location                 = "East US"
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+  allow_blob_public_access = true
+
+  tags = {
+    environment = "staging"
+  }
+}
+
+resource "azurerm_storage_account" "tfstate2" {
   name                     = "t1234fstate${random_string.resource_code.result}"
   resource_group_name      = "testRG"
   location                 = "East US"
