@@ -61,7 +61,7 @@ resource "azurerm_storage_account" "tfstate1" {
 }
 
 resource "azurerm_storage_account" "tfstate2" {
-  name                     = "t1234fstate${random_string.resource_code.result}"
+  name                     = "t12345fstate${random_string.resource_code.result}"
   resource_group_name      = "testRG"
   location                 = "East US"
   account_tier             = "Standard"
