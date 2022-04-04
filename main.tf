@@ -3,7 +3,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_storage_account" "example" {
-  name                     = "storageaccountname"
+  name                     = "sabinttest1234567"
   resource_group_name      = "testRG"
   location                 = "East US"
   account_tier             = "Standard"
